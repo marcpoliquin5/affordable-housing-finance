@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Rainbow Village",
+    "source": "https://www.htgf.com/news/rainbow-village-breaks-ground-miami-fl",
+    "publication_date": "2025-02-05",
+    "units": 310,
+    "reported_project_cost_millions": 185.0,
+    "rent_range_monthly_usd": [793, 2634],
+    "funding": [
+      {"label": "LIHTC equity", "amount_millions": 70.0, "stage": "equity"},
+      {"label": "SAIL financing", "amount_millions": 15.0, "stage": "subordinate_debt"},
+      {"label": "KeyBank construction financing", "amount_millions": 52.0, "stage": "construction_debt"},
+      {"label": "JPMorgan Chase construction financing", "amount_millions": 57.2, "stage": "construction_debt"},
+      {"label": "KeyBank permanent financing", "amount_millions": 60.4, "stage": "permanent_debt"},
+      {"label": "Miami-Dade County grant", "amount_millions": 0.5, "stage": "grant"},
+      {"label": "PHCD seller note", "amount_millions": 3.1, "stage": "subordinate_debt"},
+      {"label": "PHCD HOME loan", "amount_millions": 3.0, "stage": "subordinate_debt"},
+      {"label": "SEOPW CRA loan", "amount_millions": 15.0, "stage": "subordinate_debt"},
+      {"label": "Bond Reinvestment Earnings", "amount_millions": 11.8, "stage": "other_disclosed"}
+    ]
+  },
+  {
+    "name": "Artisan Pointe Phase I",
+    "source": "https://www.htgf.com/news/housing-trust-group-am-affordable-housing-secure-financing-for-phase-i-of-new-affordable-community-in-naranja-florida",
+    "publication_date": "2026-07-21",
+    "units": 115,
+    "reported_project_cost_millions": null,
+    "rent_range_monthly_usd": [766, 2145],
+    "funding": [
+      {"label": "LIHTC equity", "amount_millions": 31.46, "stage": "equity"},
+      {"label": "U.S. Bancorp construction loan", "amount_millions": 39.0, "stage": "construction_debt"},
+      {"label": "Berkadia-arranged permanent loan", "amount_millions": 16.9, "stage": "permanent_debt"},
+      {"label": "Naranja Lakes CRA loan", "amount_millions": 3.5, "stage": "subordinate_debt"},
+      {"label": "Naranja Lakes CRA TIF reimbursements", "amount_millions": 3.5, "stage": "reimbursement"}
+    ]
+  }
+]
