@@ -14,14 +14,14 @@ Published monthly rent range: $793–$2,634
 | Financing item | Stage | Amount ($m) |
 |---|---|---:|
 | LIHTC equity | equity | 70.0 |
-| SAIL financing | subordinate debt | 15.0 |
+| SAIL financing | program financing | 15.0 |
 | KeyBank construction financing | construction debt | 52.0 |
 | JPMorgan Chase construction financing | construction debt | 57.2 |
 | KeyBank permanent financing | permanent debt | 60.4 |
 | Miami-Dade County grant | grant | 0.5 |
-| PHCD seller note | subordinate debt | 3.1 |
-| PHCD HOME loan | subordinate debt | 3.0 |
-| SEOPW CRA loan | subordinate debt | 15.0 |
+| PHCD seller note | seller note | 3.1 |
+| PHCD HOME loan | public loan | 3.0 |
+| SEOPW CRA loan | public loan | 15.0 |
 | Bond Reinvestment Earnings | other disclosed | 11.8 |
 
 Construction facilities disclosed: $109.2m. Permanent facilities disclosed: $60.4m.
@@ -41,7 +41,7 @@ Published monthly rent range: $766–$2,145
 | LIHTC equity | equity | 31.46 |
 | U.S. Bancorp construction loan | construction debt | 39.0 |
 | Berkadia-arranged permanent loan | permanent debt | 16.9 |
-| Naranja Lakes CRA loan | subordinate debt | 3.5 |
+| Naranja Lakes CRA loan | public loan | 3.5 |
 | Naranja Lakes CRA TIF reimbursements | reimbursement | 3.5 |
 
 Construction facilities disclosed: $39.0m. Permanent facilities disclosed: $16.9m.

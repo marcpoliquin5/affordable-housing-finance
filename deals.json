@@ -8,14 +8,14 @@
     "rent_range_monthly_usd": [793, 2634],
     "funding": [
       {"label": "LIHTC equity", "amount_millions": 70.0, "stage": "equity"},
-      {"label": "SAIL financing", "amount_millions": 15.0, "stage": "subordinate_debt"},
+      {"label": "SAIL financing", "amount_millions": 15.0, "stage": "program_financing"},
       {"label": "KeyBank construction financing", "amount_millions": 52.0, "stage": "construction_debt"},
       {"label": "JPMorgan Chase construction financing", "amount_millions": 57.2, "stage": "construction_debt"},
       {"label": "KeyBank permanent financing", "amount_millions": 60.4, "stage": "permanent_debt"},
       {"label": "Miami-Dade County grant", "amount_millions": 0.5, "stage": "grant"},
-      {"label": "PHCD seller note", "amount_millions": 3.1, "stage": "subordinate_debt"},
-      {"label": "PHCD HOME loan", "amount_millions": 3.0, "stage": "subordinate_debt"},
-      {"label": "SEOPW CRA loan", "amount_millions": 15.0, "stage": "subordinate_debt"},
+      {"label": "PHCD seller note", "amount_millions": 3.1, "stage": "seller_note"},
+      {"label": "PHCD HOME loan", "amount_millions": 3.0, "stage": "public_loan"},
+      {"label": "SEOPW CRA loan", "amount_millions": 15.0, "stage": "public_loan"},
       {"label": "Bond Reinvestment Earnings", "amount_millions": 11.8, "stage": "other_disclosed"}
     ]
   },
@@ -30,7 +30,7 @@
       {"label": "LIHTC equity", "amount_millions": 31.46, "stage": "equity"},
       {"label": "U.S. Bancorp construction loan", "amount_millions": 39.0, "stage": "construction_debt"},
       {"label": "Berkadia-arranged permanent loan", "amount_millions": 16.9, "stage": "permanent_debt"},
-      {"label": "Naranja Lakes CRA loan", "amount_millions": 3.5, "stage": "subordinate_debt"},
+      {"label": "Naranja Lakes CRA loan", "amount_millions": 3.5, "stage": "public_loan"},
       {"label": "Naranja Lakes CRA TIF reimbursements", "amount_millions": 3.5, "stage": "reimbursement"}
     ]
   }

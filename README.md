@@ -1,6 +1,6 @@
 # Affordable housing financing review
 
-This project analyzes published financing for two real Housing Trust Group developments in Miami-Dade County: [Rainbow Village](https://www.htgf.com/news/rainbow-village-breaks-ground-miami-fl) and [Artisan Pointe Phase I](https://www.htgf.com/news/housing-trust-group-am-affordable-housing-secure-financing-for-phase-i-of-new-affordable-community-in-naranja-florida). Every figure in `deals.json` comes from those press releases. The Python code separates construction financing, permanent financing, equity, subordinate debt, grants, and reimbursements.
+This project analyzes published financing for two real Housing Trust Group developments in Miami-Dade County: [Rainbow Village](https://www.htgf.com/news/rainbow-village-breaks-ground-miami-fl) and [Artisan Pointe Phase I](https://www.htgf.com/news/housing-trust-group-am-affordable-housing-secure-financing-for-phase-i-of-new-affordable-community-in-naranja-florida). Every figure in `deals.json` comes from those press releases. The Python code separates construction financing, permanent financing, equity, public loans, grants, and reimbursements. It does not infer loan seniority when the source does not state it.
 
 ## Run
 
