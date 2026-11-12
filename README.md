@@ -3,27 +3,33 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 
-This project analyzes published financing for two real Housing Trust Group developments in Miami-Dade County: [Rainbow Village](https://www.htgf.com/news/rainbow-village-breaks-ground-miami-fl) and [Artisan Pointe Phase I](https://www.htgf.com/news/housing-trust-group-am-affordable-housing-secure-financing-for-phase-i-of-new-affordable-community-in-naranja-florida). Every figure in `deals.json` comes from those press releases. The Python code separates construction financing, permanent financing, equity, public loans, grants, and reimbursements. It does not infer loan seniority when the source does not state it.
+Breaks down the published financing for two Housing Trust Group developments in Miami-Dade County, [Rainbow Village](https://www.htgf.com/news/rainbow-village-breaks-ground-miami-fl) (310 homes) and [Artisan Pointe Phase I](https://www.htgf.com/news/housing-trust-group-am-affordable-housing-secure-financing-for-phase-i-of-new-affordable-community-in-naranja-florida) (115 homes), by financing stage, and re-checks every figure against its source page.
+
+## The problem
+
+A financing announcement for an affordable housing deal lists tax-credit equity, construction loans, permanent loans, public loans and grants side by side. Adding them up overstates the capital behind the project, because a construction loan is normally repaid by the permanent loan rather than stacked on top of it. Rainbow Village's release names $109.2m of construction facilities and a $60.4m permanent loan against a $185.0m reported cost; a naive total would count both.
+
+This project keeps the stages apart and reports only what the sources disclose.
+
+## What it does
+
+- **`deals.json`** holds each development's financing items (label, amount, stage) and its source URL. Every figure comes from the two press releases linked above.
+- **`analyze.py`** validates the data, totals financing by stage, computes reported cost per home where a cost was published, and writes a Markdown memo.
+- **`--verify-live`** fetches each source page and confirms that the project name, unit count and every financing amount still appear on it. It exits with code 2 if any figure is missing.
+- **`HTG_Financing_Review.xlsx`** presents the same items in Excel. Its Summary tab uses `SUMIF` formulas for financing by stage and cost per home.
 
 ## Run
 
-Requires Python 3.11 or newer. No packages are required.
+Requires Python 3.11 or newer. No packages to install.
 
 ```bash
-python analyze.py --verify-live --output FINANCING_REVIEW.md
+python analyze.py                                          # print the memo
+python analyze.py --verify-live --output FINANCING_REVIEW.md   # check sources, then write it
 ```
-
-The command checks that the source pages still publish the key figures, then writes a memo. Run `python analyze.py` to print it.
-
-`HTG_Financing_Review.xlsx` presents the same sourced items in Excel. Its Summary tab uses formulas to calculate disclosed financing by stage and the reported cost per home; a blank cost remains blank where it was not disclosed. The Python analysis and live verification run independently of Excel.
-
-## Important finance boundary
-
-Construction loans and permanent loans are often sequential, and the releases do not publish the complete closing sources-and-uses schedules. Adding every announced amount would overstate available capital. This project reports financing by stage and leaves undisclosed totals blank. It does not invent operating income, debt service, interest rates, or investment returns.
 
 ## Sample output
 
-Running `python analyze.py` prints the memo below (excerpt; the full output is in [`FINANCING_REVIEW.md`](FINANCING_REVIEW.md)):
+Excerpt from `python analyze.py` (full memo: [`FINANCING_REVIEW.md`](FINANCING_REVIEW.md)):
 
 ```text
 ## Rainbow Village
@@ -44,7 +50,7 @@ Published monthly rent range: $793–$2,634
 Construction facilities disclosed: $109.2m. Permanent facilities disclosed: $60.4m.
 ```
 
-With `--verify-live`, the script first fetches each source page and reports, per figure, whether it is still published:
+With `--verify-live`, each source is checked figure by figure first:
 
 ```text
 {
@@ -59,25 +65,16 @@ With `--verify-live`, the script first fetches each source page and reports, per
 }
 ```
 
-## Use cases
+## Scope
 
-- **Disclosure review.** Reconcile announced financing for affordable housing deals against the public record, item by item, with every figure traceable to its source.
-- **Capital-stack literacy.** Show how Low-Income Housing Tax Credit (LIHTC) equity, construction debt, permanent debt, public loans, grants, and reimbursements play different roles at different stages of a development.
-- **Analyst training.** A compact worked example of a core real-estate finance discipline: classify each source correctly, and never sum amounts that represent sequential financing stages.
-- **Template for other deals.** The `deals.json` data model and the live-verification logic are not tied to one developer. Covering other published deals means adding entries with their source URLs (and updating the memo's source line, which currently names Housing Trust Group).
+This is a review of public disclosures, not an underwriting model.
 
-## Why it matters
+- The press releases do not include closing sources-and-uses schedules, so there is no final capital stack here.
+- Values a source does not publish stay blank. Artisan Pointe's total development cost is one example.
+- Loan seniority is not recorded, because the sources do not state it.
+- Operating income, debt service, interest rates and returns are out of scope.
 
-Press releases about affordable housing often list many financing sources side by side. Adding them together can overstate the capital available, because a construction loan is usually repaid by a permanent loan rather than stacked on top of it. Keeping financing stages separate, and leaving undisclosed values blank instead of estimating them, is the difference between a defensible analysis and a misleading one.
-
-## Repository contents
-
-| File | Purpose |
-|---|---|
-| `deals.json` | Sourced financing items for each development |
-| `analyze.py` | Classification, memo generation, and live source verification |
-| `FINANCING_REVIEW.md` | Generated memo |
-| `HTG_Financing_Review.xlsx` | The same sourced items in Excel, with formula-driven summary |
+To cover another deal, add an entry to `deals.json` with its source URL. The memo's header currently names Housing Trust Group and would need updating for other developers.
 
 ## License
 
